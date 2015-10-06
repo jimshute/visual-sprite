@@ -1,0 +1,24 @@
+{
+  "name": "visual-sprite",
+  "version": "0.0.1",
+  "description": "visual css sprite, using web ui to convert css sprite easily.",
+  "main": "index.js",
+  "scripts": {
+    "test": "make test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jimshute/visual-sprite.git"
+  },
+  "keywords": [
+    "css",
+    "sprite",
+    "nodejs"
+  ],
+  "author": "Jim Shute",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jimshute/visual-sprite/issues"
+  },
+  "homepage": "https://github.com/jimshute/visual-sprite#readme"
+}
