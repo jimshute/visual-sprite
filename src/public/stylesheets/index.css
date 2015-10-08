@@ -1,0 +1,12 @@
+body {
+	padding: 0 10px;
+}
+
+.side-bar {
+  width: 200px;
+}
+
+.main-body {
+	padding: 10px;
+  overflow: hidden;
+}

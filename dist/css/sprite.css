@@ -1,0 +1,70 @@
+.icon {
+  background-image: url("../images/sprite.png");
+}
+@media (-webkit-min-device-pixel-ratio: 2),
+(min-resolution: 192dpi) {
+  .icon {
+    background-image: url("../images/sprite@2x.png");
+    background-size: 20px 240px;
+  }
+}
+.icon-RSS-32 {
+  background-position: -0px -0px;
+  width: 20px;
+  height: 20px;
+}
+.icon-Digg-01-32 {
+  background-position: -0px -20px;
+  width: 20px;
+  height: 20px;
+}
+.icon-Facebook-32 {
+  background-position: -0px -40px;
+  width: 20px;
+  height: 20px;
+}
+.icon-Google-32 {
+  background-position: -0px -60px;
+  width: 20px;
+  height: 20px;
+}
+.icon-LinkedIn-32 {
+  background-position: -0px -80px;
+  width: 20px;
+  height: 20px;
+}
+.icon-Pinterest-32 {
+  background-position: -0px -100px;
+  width: 20px;
+  height: 20px;
+}
+.icon-Ebay-32 {
+  background-position: -0px -120px;
+  width: 20px;
+  height: 20px;
+}
+.icon-Twitter-Bird-32 {
+  background-position: -0px -140px;
+  width: 20px;
+  height: 20px;
+}
+.icon-Vimeo-32 {
+  background-position: -0px -160px;
+  width: 20px;
+  height: 20px;
+}
+.icon-WordPress-32 {
+  background-position: -0px -180px;
+  width: 20px;
+  height: 20px;
+}
+.icon-Yahoo-01-32 {
+  background-position: -0px -200px;
+  width: 20px;
+  height: 20px;
+}
+.icon-YouTube1-32 {
+  background-position: -0px -220px;
+  width: 20px;
+  height: 20px;
+}

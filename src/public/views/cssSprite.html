@@ -1,0 +1,18 @@
+<div class="tool-bar navbar navbar-default">
+  <input class="path" type="text" ng-model="configs.path" place-holder="Please choose a folder">
+  <input type="button" class="load" value="load" ng-click="loadImages()">
+  <input class="generate" type="button" value="generate" ng-click="generate()">
+  <input class="config" type="button" value="config">
+</div>
+<div class="panel panel-default">
+  <div class="panel-heading">
+  </div>
+  <div class="list-view panel-body">
+    <ul>
+      <li ng-repeat="item in imageList">
+        <img ng-src="{{item.src}}" alt="">
+        <span class="file-name" ng-bind="item.imageName"></span>
+      </li>
+    </ul>
+  </div>
+</div>
