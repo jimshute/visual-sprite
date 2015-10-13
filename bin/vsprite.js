@@ -19,7 +19,7 @@ program
 
 require('../index.js')({
   port: program.port || 3000,
-  path: pathParser.getAbsolutePath(program.src),
+  src: pathParser.getAbsolutePath(program.src||process.cwd()),
   cssDist: pathParser.getAbsolutePath(program.cssDist || ((program.src || process.cwd()) + '/cssDist')),
   imgDist: pathParser.getAbsolutePath(program.imgDist || ((program.src || process.cwd()) + '/imgDist'))
 });

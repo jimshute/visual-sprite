@@ -6,7 +6,7 @@
 var config = require('./configs/config');
 var runServer = function(options) {
   var port = options.port || 3000;
-  var path = options.path || process.cwd();
+  var path = options.src || process.cwd();
   var cssDist = options.cssDist || process.cwd() + '/cssDist';
   var imgDist = options.imgDist || process.cwd() + '/imgDist';
   config.resourcePath = path;

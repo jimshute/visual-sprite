@@ -1,12 +1,13 @@
 {
   "name": "visual-sprite",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "visual css sprite, using web ui to convert css sprite easily.",
   "main": "index.js",
   "scripts": {
     "test": "make test",
     "patch-release": "npm version patch && npm publish && git push --follow-tags",
-    "git-commit": "git add -A . && git commit -a -m 'gh-pages update'"
+    "git-commit": "git add -A . && git commit -a -m 'gh-pages update'",
+    "install": "bower install"
   },
   "bin": {
     "vsprite": "bin/vsprite.js"
