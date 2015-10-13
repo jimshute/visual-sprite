@@ -1,6 +1,6 @@
 {
   "name": "visual-sprite",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "visual css sprite, using web ui to convert css sprite easily.",
   "main": "index.js",
   "scripts": {

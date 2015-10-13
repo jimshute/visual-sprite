@@ -3,7 +3,7 @@ angular.module('sprite').controller('cssSpriteCtrl', ['$scope', 'CssSpriteServic
   angular.extend($scope, {
     imageList: {},
     configs: {
-      path: '/Users/jimshute/projects/visual-sprite/src/',
+      path: '',
       dist: '', // path of directory to write sprite file to 
       name: '', // name of sprite file without file extension
       style: ''
