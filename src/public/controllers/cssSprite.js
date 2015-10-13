@@ -1,4 +1,4 @@
-angular.module('sprite').controller('cssSpriteCtrl', ['$scope', 'CssSpriteService', function($scope, CssSpriteService) {
+angular.module('sprite').controller('cssSpriteCtrl', ['$scope', 'CssSpriteService', '$uibModal', function($scope, CssSpriteService, $uibModal) {
   console.log('It works!!!');
   angular.extend($scope, {
     imageList: {},
@@ -19,6 +19,23 @@ angular.module('sprite').controller('cssSpriteCtrl', ['$scope', 'CssSpriteServic
           alert('success!');
         } else {
           alert('failed!');
+        }
+      });
+    },
+    showCfgDialog: function() {
+      var modalInstance = $uibModal.open({
+        animation: true,
+        templateUrl: '../template/configDialog.html',
+        windowTemplateUrl: '../template/windowModal.html',
+        controller: function($scope, $modalInstance, items) {
+          console.log($modalInstance);
+        },
+        backdrop: false,
+        size: 'lg',
+        resolve: {
+          items: function() {
+            return $scope.items;
+          }
         }
       });
     }

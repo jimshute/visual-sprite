@@ -10,7 +10,7 @@
     </div>
   </div>
   <div class="collapse navbar-collapse" id="main-list">
-    <ul class="nav navbar-nav">
+    <!--     <ul class="nav navbar-nav">
       <li class="col-lg-6">
         <input class="path input" type="text" ng-model="configs.path" place-holder="Please choose a folder">
       </li>
@@ -19,7 +19,7 @@
         <a class="generate" ng-click="generate()">generate</a>
         <a class="config">config</a>
       </li>
-    </ul>
+    </ul> -->
   </div>
   <!-- <input class="path" type="text" ng-model="configs.path" place-holder="Please choose a folder">
   <input type="button" class="load" value="load" ng-click="loadImages()">
@@ -28,13 +28,25 @@
 </div>
 <div class="panel panel-default">
   <div class="panel-heading">
-    <div class="input-group">
-      <span class="input-group-addon" id="image-path">files</span>
-      <input type="text" name="path" id="path" class="form-control">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="input-group">
+          <span class="input-group-addon" id="image-path">files</span>
+          <input type="text" name="path" placeholder="select a folder which contains the images" id="path" class="form-control">
+        </div>
+      </div>
+      <div class="col-md-8">
+        <div class="btn-group btn-grou-xs">
+          <button class="btn btn-default" ng-click="loadImages()">load</button>
+          <button class="btn btn-default" ng-click="generate()">generate</button>
+          <button class="btn btn-default" ng-click="showCfgDialog()">config</button>
+          <!-- <button class="btn btn-default"></button> -->
+        </div>
+      </div>
     </div>
   </div>
   <div class="list-view panel-body">
-    <ul>
+    <ul class="">
       <li ng-repeat="item in imageList">
         <img ng-src="{{item.src}}" alt="">
         <span class="file-name" ng-bind="item.imageName"></span>

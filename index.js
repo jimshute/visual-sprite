@@ -3,8 +3,15 @@
 /**
  * Module dependencies.
  */
-var runServer = function(port, path) {
-  global.resourcePath = path;
+var config = require('./configs/config');
+var runServer = function(options) {
+  var port = options.port || 3000;
+  var path = options.path || process.cwd();
+  var cssDist = options.cssDist || process.cwd() + '/cssDist';
+  var imgDist = options.imgDist || process.cwd() + '/imgDist';
+  config.resourcePath = path;
+  config.cssDist = cssDist;
+  config.imgDist = imgDist;
   var app = require('./src/app.js');
   var debug = require('debug')('NodeDemo:server');
   var http = require('http');

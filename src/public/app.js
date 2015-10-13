@@ -1,6 +1,7 @@
 angular.module('sprite', [
   'ngRoute',
-  'ngResource'
+  'ngResource',
+  'ui.bootstrap'
 ]).config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/cssSprite', {
       controller: 'cssSpriteCtrl',
