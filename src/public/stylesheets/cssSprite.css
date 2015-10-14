@@ -1,0 +1,51 @@
+.upload-btn {
+  position: absolute;
+  display: inline-block;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+
+.img-list li {
+  position: relative;
+  list-style: none;
+  float: left;
+  width: 150px;
+  padding: 15px 0;
+  border-radius: 5px;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+.img-list li .close {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  /*display: block;*/
+  width: 16px;
+  height: 16px;
+  font-size: 16px;
+  display: none;
+}
+
+.img-list li .file-name {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-top: 8px;
+  display: block;
+}
+
+.img-list li:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.img-list li:hover .close {
+  display: block;
+}
+
+.img-list li .close {
+  font-style: normal;
+}

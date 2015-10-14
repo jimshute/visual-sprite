@@ -1,4 +1,4 @@
-<div class="tool-bar navbar navbar-default">
+<!-- <div class="tool-bar navbar navbar-default">
   <div class="container-fluid">
     <div class="nav-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapsed" data-target="#main-list" aria-expanded="false">
@@ -9,7 +9,7 @@
       </button>
     </div>
   </div>
-  <div class="collapse navbar-collapse" id="main-list">
+  <div class="collapse navbar-collapse" id="main-list"> -->
     <!--     <ul class="nav navbar-nav">
       <li class="col-lg-6">
         <input class="path input" type="text" ng-model="configs.path" place-holder="Please choose a folder">
@@ -20,14 +20,15 @@
         <a class="config">config</a>
       </li>
     </ul> -->
-  </div>
+  <!-- </div> -->
   <!-- <input class="path" type="text" ng-model="configs.path" place-holder="Please choose a folder">
   <input type="button" class="load" value="load" ng-click="loadImages()">
   <input class="generate" type="button" value="generate" ng-click="generate()">
   <input class="config" type="button" value="config"> -->
-</div>
+<!-- </div> -->
 <div class="panel panel-default">
   <div class="panel-heading">
+  <!-- <input type="file" name="" id=""> -->
     <div class="row">
       <div class="col-md-4">
         <div class="input-group">
@@ -40,14 +41,19 @@
           <button class="btn btn-default" ng-click="loadImages()">load</button>
           <button class="btn btn-default" ng-click="generate()">generate</button>
           <button class="btn btn-default" ng-click="showCfgDialog()">config</button>
+          <span href="" class="btn btn-default" style="position: relative">
+            upload
+          <input class="upload-btn" type="file" name="test" nv-file-select uploader="fileUploader" multiple>
+          </span>
           <!-- <button class="btn btn-default"></button> -->
         </div>
       </div>
     </div>
   </div>
   <div class="list-view panel-body">
-    <ul class="">
+    <ul class="img-list container-fluid">
       <li ng-repeat="item in imageList">
+        <i class="close" href="javascript:;" ng-click="deleteFile(item.imageName)">x</i>
         <img ng-src="{{item.src}}" alt="">
         <span class="file-name" ng-bind="item.imageName"></span>
       </li>

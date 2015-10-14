@@ -1,7 +1,8 @@
 angular.module('sprite', [
   'ngRoute',
   'ngResource',
-  'ui.bootstrap'
+  'ui.bootstrap',
+  'angularFileUpload'
 ]).config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/cssSprite', {
       controller: 'cssSpriteCtrl',

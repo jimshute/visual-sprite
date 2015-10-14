@@ -4,11 +4,12 @@
  * Module dependencies.
  */
 var config = require('./configs/config');
+var pathParser = require('./configs/pathParser');
 var runServer = function(options) {
   var port = options.port || 3000;
-  var path = options.src || process.cwd();
-  var cssDist = options.cssDist || process.cwd() + '/cssDist';
-  var imgDist = options.imgDist || process.cwd() + '/imgDist';
+  var path = pathParser.getAbsolutePath(options.src || process.cwd());
+  var cssDist = pathParser.getAbsolutePath(options.cssDist || process.cwd() + '/cssDist');
+  var imgDist = pathParser.getAbsolutePath(options.imgDist || process.cwd() + '/imgDist');
   config.resourcePath = path;
   config.cssDist = cssDist;
   config.imgDist = imgDist;

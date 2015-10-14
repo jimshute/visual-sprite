@@ -1,6 +1,6 @@
 {
   "name": "visual-sprite",
-  "version": "0.0.5",
+  "version": "0.0.8",
   "description": "visual css sprite, using web ui to convert css sprite easily.",
   "main": "index.js",
   "scripts": {
@@ -30,6 +30,7 @@
   "dependencies": {
     "body-parser": "^1.14.1",
     "commander": "^2.8.1",
+    "connect-busboy": "0.0.2",
     "cookie-parser": "^1.4.0",
     "debug": "^2.2.0",
     "ejs": "^2.3.4",

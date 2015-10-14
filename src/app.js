@@ -4,6 +4,7 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var busboy = require('connect-busboy');
 var config = require('../configs/config.js');
 console.log(config);
 
@@ -20,6 +21,14 @@ app.set('view engine', 'ejs');
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
+// app.use(busboy());
+app.use(busboy({
+  highWaterMark: 2 * 1024 * 1024,
+  limits: {
+    fileSize: 10 * 1024 * 1024
+  }
+}));
+// app.use(bodyParser({uploadDir: config.resourcePath}));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
