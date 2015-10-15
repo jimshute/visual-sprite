@@ -2,7 +2,8 @@ angular.module('sprite', [
   'ngRoute',
   'ngResource',
   'ui.bootstrap',
-  'angularFileUpload'
+  'angularFileUpload',
+  'checklist-model'
 ]).config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/cssSprite', {
       controller: 'cssSpriteCtrl',

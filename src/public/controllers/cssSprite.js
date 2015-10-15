@@ -4,6 +4,19 @@ angular.module('sprite').controller('cssSpriteCtrl', [
     console.log('It works!!!');
     angular.extend($scope, {
       imageList: {},
+      dimensions: [{
+        ratio: 1,
+        dpi: 72,
+        placeholder: '@1 image dpi'
+      }, {
+        ratio: 2,
+        dpi: 192,
+        placeholder: '@2 image dpi'
+      }, {
+        ratio: 3,
+        dpi: 300,
+        placeholder: '@3 image dpi'
+      }],
       configs: {
         path: '',
         dist: '', // path of directory to write sprite file to 
@@ -60,6 +73,7 @@ angular.module('sprite').controller('cssSpriteCtrl', [
       }
     });
     $scope.loadImages();
+    $scope.configs.dimension = [$scope.dimensions[0]];
     console.log($scope.fileUploader);
   }
 ]);

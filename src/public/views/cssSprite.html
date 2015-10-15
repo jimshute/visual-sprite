@@ -10,7 +10,7 @@
     </div>
   </div>
   <div class="collapse navbar-collapse" id="main-list"> -->
-    <!--     <ul class="nav navbar-nav">
+<!--     <ul class="nav navbar-nav">
       <li class="col-lg-6">
         <input class="path input" type="text" ng-model="configs.path" place-holder="Please choose a folder">
       </li>
@@ -20,23 +20,23 @@
         <a class="config">config</a>
       </li>
     </ul> -->
-  <!-- </div> -->
-  <!-- <input class="path" type="text" ng-model="configs.path" place-holder="Please choose a folder">
+<!-- </div> -->
+<!-- <input class="path" type="text" ng-model="configs.path" place-holder="Please choose a folder">
   <input type="button" class="load" value="load" ng-click="loadImages()">
   <input class="generate" type="button" value="generate" ng-click="generate()">
   <input class="config" type="button" value="config"> -->
 <!-- </div> -->
 <div class="panel panel-default">
   <div class="panel-heading">
-  <!-- <input type="file" name="" id=""> -->
+    <!-- <input type="file" name="" id=""> -->
     <div class="row">
-      <div class="col-md-4">
+      <div class="col-md-3">
         <div class="input-group">
           <span class="input-group-addon" id="image-path">files</span>
           <input type="text" name="path" placeholder="select a folder which contains the images" id="path" class="form-control">
         </div>
       </div>
-      <div class="col-md-8">
+      <div class="col-md-3">
         <div class="btn-group btn-grou-xs">
           <button class="btn btn-default" ng-click="loadImages()">load</button>
           <button class="btn btn-default" ng-click="generate()">generate</button>
@@ -47,6 +47,29 @@
           </span>
           <!-- <button class="btn btn-default"></button> -->
         </div>
+      </div>
+      <div class="col-md-6">
+        <div ng-repeat="item in dimensions" class="col-lg-4">
+          <div class="input-group">
+            <span class="input-group-addon">
+              <input checklist-model="configs.dimension" data-checklist-value="item" type="checkbox" aria-label="..."></span>
+            <input type="text" placeholder="{{item.placeholder}}" class="form-control" value="{{item.dpi}}" aria-label="...">
+          </div>
+        </div>
+        <!-- <div class="col-lg-4">
+          <div class="input-group">
+            <span class="input-group-addon">
+              <input type="checkbox" aria-label="..."></span>
+            <input type="text" placeholder="@2 image dpi" class="form-control" aria-label="...">
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="input-group">
+            <span class="input-group-addon">
+              <input type="checkbox" aria-label="..."></span>
+            <input type="text" placeholder="@3 image dpi" class="form-control" aria-label="...">
+          </div>
+        </div> -->
       </div>
     </div>
   </div>
