@@ -6,8 +6,7 @@
   "scripts": {
     "test": "make test",
     "patch-release": "npm version patch && npm publish && git push --follow-tags",
-    "git-commit": "git add -A . && git commit -a -m 'gh-pages update'",
-    "install": "sudo bower install --allow-root"
+    "git-commit": "git add -A . && git commit -a -m 'gh-pages update'"
   },
   "bin": {
     "vsprite": "bin/vsprite.js"
