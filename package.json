@@ -1,13 +1,13 @@
 {
   "name": "visual-sprite",
-  "version": "0.0.8",
+  "version": "0.0.10",
   "description": "visual css sprite, using web ui to convert css sprite easily.",
   "main": "index.js",
   "scripts": {
     "test": "make test",
     "patch-release": "npm version patch && npm publish && git push --follow-tags",
     "git-commit": "git add -A . && git commit -a -m 'gh-pages update'",
-    "install": "bower install"
+    "install": "sudo bower install --allow-root"
   },
   "bin": {
     "vsprite": "bin/vsprite.js"
