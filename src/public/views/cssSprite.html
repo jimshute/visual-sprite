@@ -77,7 +77,7 @@
     <ul class="img-list container-fluid">
       <li ng-repeat="item in imageList">
         <i class="close" href="javascript:;" ng-click="deleteFile(item.imageName)">x</i>
-        <img ng-src="{{item.src}}" alt="">
+        <div class="image-container"><img ng-src="{{item.src}}" alt=""></div>
         <span class="file-name" ng-bind="item.imageName"></span>
       </li>
     </ul>

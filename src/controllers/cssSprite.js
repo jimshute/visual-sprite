@@ -57,12 +57,15 @@ exports.generate = function(req, res, next) {
   var options = {
     src: (req.body.path || config.resourcePath) + '/*.png',
     out: req.body.dist || config.cssDist, // path of directory to write sprite file to.
+    cssPath: req.body.dist || config.imgDist,
     name: req.body.name || 'sprite', // Name of sprite file with out file extension
     style: req.body.style || 'sprite.css' // file to write css to.
   };
   if (req.body.dimension && req.body.dimension.length > 0) {
     options.dimension = req.body.dimension;
   }
+  options.style = req.body.style || 'sprite.less';
+  options.processor = 'less';
   console.log(options);
   // console.log(options);
   sprity.create(options, function() {

@@ -13,7 +13,7 @@
   list-style: none;
   float: left;
   width: 150px;
-  padding: 15px 0;
+  padding: 15px 8px;
   border-radius: 5px;
   text-align: center;
   transition: background-color 0.3s ease;
@@ -48,4 +48,17 @@
 
 .img-list li .close {
   font-style: normal;
+}
+
+.img-list .image-container {
+  width: 100%;
+  height: 140px;
+  overflow: hidden;
+  vertical-align: middle;
+}
+
+.img-list img {
+  max-width: 100%;
+  vertical-align: middle;
+  /*max-height: 100%;*/
 }
