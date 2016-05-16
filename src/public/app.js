@@ -1,4 +1,5 @@
 angular.module('sprite', [
+  'ngAnimate',
   'ngRoute',
   'ngResource',
   'ui.bootstrap',

@@ -1,1 +1,27 @@
-hello
+<!-- <div class="modal-content" uib-modal-transclude=""> -->
+  <div class="modal-header ng-scope">
+    <h3 class="modal-title">I'm a modal!</h3>
+  </div>
+  <div class="modal-body ng-scope">
+    <ul>
+      <!-- ngRepeat: item in items -->
+      <li ng-repeat="item in items" class="ng-scope">
+        <a href="#" ng-click="$event.preventDefault(); selected.item = item" class="ng-binding">item1</a>
+      </li>
+      <!-- end ngRepeat: item in items -->
+      <li ng-repeat="item in items" class="ng-scope">
+        <a href="#" ng-click="$event.preventDefault(); selected.item = item" class="ng-binding">item2</a>
+      </li>
+      <!-- end ngRepeat: item in items -->
+      <li ng-repeat="item in items" class="ng-scope">
+        <a href="#" ng-click="$event.preventDefault(); selected.item = item" class="ng-binding">item3</a>
+      </li>
+      <!-- end ngRepeat: item in items -->
+    </ul>
+    Selected: <b class="ng-binding">item1</b>
+  </div>
+  <div class="modal-footer ng-scope">
+    <button class="btn btn-primary" type="button" ng-click="ok()">OK</button>
+    <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+  </div>
+<!-- </div> -->

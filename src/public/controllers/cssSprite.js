@@ -39,7 +39,9 @@ angular.module('sprite').controller('cssSpriteCtrl', [
         // console.log($scope.imageList);
       },
       deleteFile: function(fileName) {
-        var result = CssSpriteService.delete({fileName: fileName});
+        var result = CssSpriteService.delete({
+          fileName: fileName
+        });
         result.$promise.then(function(data) {
           $scope.loadImages();
         });
@@ -58,17 +60,24 @@ angular.module('sprite').controller('cssSpriteCtrl', [
         var modalInstance = $uibModal.open({
           animation: true,
           templateUrl: '../template/configDialog.html',
-          windowTemplateUrl: '../template/windowModal.html',
           controller: function($scope, $modalInstance, items) {
             console.log($modalInstance);
+            $scope.ok = function() {
+              $modalInstance.close($scope.selected.item);
+            };
+
+            $scope.cancel = function() {
+              $modalInstance.dismiss('cancel');
+            };
           },
-          backdrop: false,
+          // backdrop: false,
           size: 'lg',
           resolve: {
             items: function() {
               return $scope.items;
             }
           }
+
         });
       }
     });

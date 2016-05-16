@@ -1,7 +1,7 @@
 "use strict";
 var fs = require('fs');
-var sprity = require('sprity');
 var config = require('../../configs/config');
+var sprity = require('sprity');
 
 exports.getImageList = function(req, res, next) {
   // var path = req.params.path;
@@ -32,19 +32,6 @@ exports.getImageList = function(req, res, next) {
     }
     res.status(200).send(imgArray);
   });
-  // res.send(200, [{
-  //   src: 'http://avatar.csdn.net/7/B/A/1_violet_day.jpg',
-  //   imageName: 'test1'
-  // }, {
-  //   src: 'http://avatar.csdn.net/7/B/A/1_violet_day.jpg',
-  //   imageName: 'test2'
-  // }, {
-  //   src: 'http://avatar.csdn.net/7/B/A/1_violet_day.jpg',
-  //   imageName: 'test3'
-  // }, {
-  //   src: 'http://avatar.csdn.net/7/B/A/1_violet_day.jpg',
-  //   imageName: 'test4'
-  // }]);
 };
 
 exports.renderIndex = function(req, res, next) {
@@ -53,7 +40,6 @@ exports.renderIndex = function(req, res, next) {
 
 exports.generate = function(req, res, next) {
   var path = config.resourcePath;
-  // console.log(req.body);
   var options = {
     src: (req.body.path || config.resourcePath) + '/*.png',
     out: req.body.dist || config.cssDist, // path of directory to write sprite file to.
@@ -64,12 +50,9 @@ exports.generate = function(req, res, next) {
   if (req.body.dimension && req.body.dimension.length > 0) {
     options.dimension = req.body.dimension;
   }
-  options.style = req.body.style || 'sprite.less';
-  options.processor = 'less';
-  console.log(options);
-  // console.log(options);
+  options.style = req.body.style || 'sprite.css';
+  // options.processor = 'less';
   sprity.create(options, function() {
-    // console.log(arguments);
     res.status(200).send({
       code: 200
     });
@@ -77,7 +60,6 @@ exports.generate = function(req, res, next) {
 };
 
 exports.upload = function(req, res, next) {
-  // console.log(req.busboy);
   var fstream;
   req.pipe(req.busboy);
   req.busboy.on('file', function(fieldname, file, filename, encoding, mimetype) {
