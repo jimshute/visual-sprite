@@ -6,22 +6,16 @@ var pathParser = require('../configs/pathParser');
 
 program
   .version(require('../package').version)
-  //.version(require('../version')())
   .usage('[options] <keywords>')
   .option('-p, --port [port]', 'set port')
   .option('-s, --src [src]', 'src')
-  .option('-c, --css-dist [css dist]', 'css dist')
-  .option('-i, --img-dist [img dist]', 'img dist')
-  // .option('-m, --mockPort [mockPort]', 'set listen mock port') 
-  // .option('-s, --interfaceSuffix [interfaceSuffix]', 'set interfaceSuffix') 
+  .option('-d, --dist [dist]', 'output dist')
+  .option('-i, --img-src [img src]', 'img src in css')
   .parse(process.argv);
-// console.log(process.cwd());
 
 require('../index.js')({
   port: program.port || 3000,
   src: pathParser.getAbsolutePath(program.src||process.cwd()),
-  cssDist: pathParser.getAbsolutePath(program.cssDist || ((program.src || process.cwd()) + '/cssDist')),
-  imgDist: pathParser.getAbsolutePath(program.imgDist || ((program.src || process.cwd()) + '/imgDist'))
+  dist: pathParser.getAbsolutePath(program.dist || ((program.src || process.cwd()) + '/dist')),
+  imgSrc: pathParser.getAbsolutePath(program.dist || 'dist')
 });
-// console.log(program['cssDist'] || ((program.src || process.cwd()) + '/cssDist'));
-// console.log("Hello world!!");

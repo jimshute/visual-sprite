@@ -17,12 +17,7 @@ angular.module('sprite').controller('cssSpriteCtrl', [
         dpi: 300,
         placeholder: '@3 image dpi'
       }],
-      configs: {
-        path: '',
-        dist: '', // path of directory to write sprite file to 
-        name: '', // name of sprite file without file extension
-        style: ''
-      },
+      configs: window.defaultData,
       fileUploader: new FileUploader({
         url: '/upload',
         autoUpload: true,
@@ -36,7 +31,6 @@ angular.module('sprite').controller('cssSpriteCtrl', [
       }),
       loadImages: function() {
         $scope.imageList = CssSpriteService.query($scope.configs);
-        // console.log($scope.imageList);
       },
       deleteFile: function(fileName) {
         var result = CssSpriteService.delete({

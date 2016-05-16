@@ -1,7 +1,7 @@
 var cfg = {
   resourcePath: '',
-  cssDist: './cssDist',
-  imgDist: './imgDist'
+  dist: './cssDist',
+  imgSrc: './imgDist'
 };
 module.exports = function() {
   return (function() {

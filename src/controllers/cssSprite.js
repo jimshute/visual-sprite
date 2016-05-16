@@ -4,8 +4,8 @@ var config = require('../../configs/config');
 var sprity = require('sprity');
 
 exports.getImageList = function(req, res, next) {
-  // var path = req.params.path;
-  var path = req.params.path || config.resourcePath;
+  var relativePath = req.query.path;
+  var path = config.resourcePath + '/' + relativePath;
   fs.readdir(path, function(error, files) {
     if (error) {
       console.error(error);
@@ -25,7 +25,7 @@ exports.getImageList = function(req, res, next) {
       var reg = /\.png$/gi;
       if (reg.test(files[i])) {
         imgArray.push({
-          src: '/imgResources/' + files[i],
+          src: '/imgResources/' + relativePath + '/' + files[i],
           imageName: files[i]
         });
       }
@@ -35,24 +35,39 @@ exports.getImageList = function(req, res, next) {
 };
 
 exports.renderIndex = function(req, res, next) {
-  res.render('index', {});
+  res.render('index', {
+    defaultData: {
+      name: 'sprite',
+      path: '',
+      dist: 'dist',
+      imgSrc: './',
+      prefix: 'icon'
+    }
+  });
 };
 
 exports.generate = function(req, res, next) {
-  var path = config.resourcePath;
+  // console.log(req.body);
+  var relativePath = req.body.path;
+  console.log(config);
+  var path = config.resourcePath + '/' + relativePath;
   var options = {
     src: (req.body.path || config.resourcePath) + '/*.png',
-    out: req.body.dist || config.cssDist, // path of directory to write sprite file to.
-    cssPath: req.body.dist || config.imgDist,
+    out: req.body.dist ? config.resourcePath + '/' + req.body.dist : config.dist, // path of directory to write sprite file to.
+    cssPath: req.body.imgSrc || config.imgSrc,
     name: req.body.name || 'sprite', // Name of sprite file with out file extension
-    style: req.body.style || 'sprite.css' // file to write css to.
+    style: req.body.style || 'sprite.css', // file to write css to.
+    prefix: req.body.prefix || undefined,
+    'no-sort': false,
+    orientation: 'binary-tree'
   };
+  // console.log(options);
   if (req.body.dimension && req.body.dimension.length > 0) {
     options.dimension = req.body.dimension;
   }
   options.style = req.body.style || 'sprite.css';
   // options.processor = 'less';
-  sprity.create(options, function() {
+  sprity.create(options, function(a) {
     res.status(200).send({
       code: 200
     });
@@ -79,7 +94,7 @@ exports.upload = function(req, res, next) {
 exports.deleteFile = function(req, res, next) {
   console.log(req.params);
   var tmp = req.params.fileName.split('/');
-  var fileName = tmp[tmp.length-1];
+  var fileName = tmp[tmp.length - 1];
   fs.unlink(config.resourcePath + '/' + fileName, function() {
     console.log(arguments);
     res.status(200).send({});
