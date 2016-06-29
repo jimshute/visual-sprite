@@ -1,0 +1,75 @@
+
+.icon {
+  background-image: url('sprite.png');
+}
+
+.icon-Digg-01-32 {
+  background-position: -40px -128px;
+  width: 40px;
+  height: 40px;
+}
+.icon-Facebook-32 {
+  background-position: -143px -0px;
+  width: 40px;
+  height: 40px;
+}
+.icon-Google-32 {
+  background-position: -80px -128px;
+  width: 40px;
+  height: 40px;
+}
+.icon-LinkedIn-32 {
+  background-position: -86px -45px;
+  width: 40px;
+  height: 40px;
+}
+.icon-Pinterest-32 {
+  background-position: -0px -88px;
+  width: 40px;
+  height: 40px;
+}
+.icon-RSS-32 {
+  background-position: -40px -88px;
+  width: 40px;
+  height: 40px;
+}
+.icon-Twitter-Bird-32 {
+  background-position: -80px -88px;
+  width: 40px;
+  height: 40px;
+}
+.icon-Vimeo-32 {
+  background-position: -120px -128px;
+  width: 40px;
+  height: 40px;
+}
+.icon-WordPress-32 {
+  background-position: -143px -40px;
+  width: 40px;
+  height: 40px;
+}
+.icon-Yahoo-01-32 {
+  background-position: -143px -80px;
+  width: 40px;
+  height: 40px;
+}
+.icon-YouTube1-32 {
+  background-position: -0px -128px;
+  width: 40px;
+  height: 40px;
+}
+.icon-ace-logo {
+  background-position: -0px -45px;
+  width: 43px;
+  height: 43px;
+}
+.icon-console-d-logo {
+  background-position: -0px -0px;
+  width: 143px;
+  height: 45px;
+}
+.icon-dingding-logo {
+  background-position: -43px -45px;
+  width: 43px;
+  height: 42px;
+}

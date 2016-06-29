@@ -21,20 +21,21 @@ angular.module('sprite').controller('cssSpriteCtrl', [
       fileUploader: new FileUploader({
         url: '/upload',
         autoUpload: true,
+        formData: 'aaaaaaa',
         onCompleteAll: function() {
-            $scope.loadImages();
-            // console.log('yesyes');
-          }
-          // onAfterAddingFile: function() {
-          //   console.log('yes');
-          // }
+          $scope.loadImages();
+        }
       }),
       loadImages: function() {
-        $scope.imageList = CssSpriteService.query($scope.configs);
+        $scope.imageList = [];
+        CssSpriteService.query($scope.configs).$promise.then(function(data) {
+          $scope.imageList = data;
+        });
       },
       deleteFile: function(fileName) {
         var result = CssSpriteService.delete({
-          fileName: fileName
+          fileName: fileName,
+          path: $scope.configs.path
         });
         result.$promise.then(function(data) {
           $scope.loadImages();
@@ -45,7 +46,8 @@ angular.module('sprite').controller('cssSpriteCtrl', [
         result.$promise.then(function(data) {
           if (data.code == '200') {
             alert('success!');
-          } else {
+          }
+          else {
             alert('failed!');
           }
         });

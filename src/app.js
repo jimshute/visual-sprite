@@ -6,6 +6,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var busboy = require('connect-busboy');
 var config = require('../configs/config.js');
+var session = require('express-session');
 console.log(config);
 
 var routes = require('./routes/index');
@@ -21,6 +22,9 @@ app.set('view engine', 'ejs');
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
+app.use(session({
+  secret: 'keyboard cat'
+}));
 app.use(busboy({
   highWaterMark: 2 * 1024 * 1024,
   limits: {

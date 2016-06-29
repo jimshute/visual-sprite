@@ -8,14 +8,9 @@
         </div>
       </div>
       <div class="col-md-3">
-        <div class="btn-group btn-grou-xs">
-          <button class="btn btn-default" ng-click="loadImages()">load</button>
-          <button class="btn btn-default" ng-click="generate()">generate</button>
-          <button class="btn btn-default" ng-click="showCfgDialog()">config</button>
-          <span href="" class="btn btn-default" style="position: relative">
-            upload
-          <input class="upload-btn" type="file" name="test" nv-file-select uploader="fileUploader" multiple>
-          </span>
+        <div class="input-group">
+          <span class="input-group-addon" id="css-path">dist</span>
+          <input type="text" name="dist" placeholder="relative path of the css distination" id="css-dist" ng-model="configs.dist" class="form-control">
         </div>
       </div>
       <div class="col-md-6">
@@ -31,12 +26,6 @@
     <div class="row form-group">
       <div class="col-md-3">
         <div class="input-group">
-          <span class="input-group-addon" id="css-path">dist</span>
-          <input type="text" name="dist" placeholder="relative path of the css distination" id="css-dist" ng-model="configs.dist" class="form-control">
-        </div>
-      </div>
-      <div class="col-md-3">
-        <div class="input-group">
           <span class="input-group-addon" id="img-path">img src</span>
           <input type="text" name="imgsrc" placeholder="relative path of the image distination" id="img-dist" ng-model="configs.imgSrc" class="form-control">
         </div>
@@ -44,7 +33,7 @@
       <div class="col-md-3">
         <div class="input-group">
           <span class="input-group-addon" id="sprite-name">sprite name</span>
-          <input type="text" name="spriteName" placeholder="sprite file name without suffix"  ng-model="configs.name" class="form-control">
+          <input type="text" name="spriteName" placeholder="sprite file name without suffix" ng-model="configs.name" class="form-control">
         </div>
       </div>
       <div class="col-md-3">
@@ -53,12 +42,37 @@
           <input type="text" name="prefix" placeholder="prefix of class" ng-model="configs.prefix" class="form-control">
         </div>
       </div>
+      <div class="col-md-3">
+        <div class="input-group">
+          <span class="input-group-addon" id="margin">margin</span>
+          <input type="number" name="margin" placeholder="margin of item" ng-model="configs.margin" class="form-control">
+        </div>
+      </div>
+    </div>
+    <div class="row form-group">
+      <div class="col-md-3">
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" name="base64" ng-model="configs.base64">base64
+          </label>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="btn-group btn-grou-xs">
+          <button class="btn btn-primary" ng-click="loadImages()">load</button>
+          <button class="btn btn-warning" ng-click="generate()">generate</button>
+          <span href="" class="btn btn-danger" style="position: relative">
+            upload
+          <input class="upload-btn" type="file" name="test" nv-file-select options="{{configs.path}}" uploader="fileUploader" multiple>
+          </span>
+        </div>
+      </div>
     </div>
   </div>
   <div class="list-view panel-body">
     <ul class="img-list container-fluid">
       <li ng-repeat="item in imageList">
-        <i class="close" href="javascript:;" ng-click="deleteFile(item.imageName)">x</i>
+        <i class="close" ng-click="deleteFile(item.imageName)">x</i>
         <div class="image-container"><img ng-src="{{item.src}}" alt=""></div>
         <span class="file-name" ng-bind="item.imageName"></span>
       </li>
